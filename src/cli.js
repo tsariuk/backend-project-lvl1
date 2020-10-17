@@ -1,8 +1,8 @@
-import readlineSync from 'readline-sync';
+import promptly from 'promptly';
 
-const getNameAndSayHello = () => {
-  const name = readlineSync.question('May I have your name?');
+const getNameandSayHello = async () => {
+  const name = await promptly.prompt('May I have your name? ');
   console.log(`Hello, ${name}!`);
 };
 
-export default getNameAndSayHello;
+export default getNameandSayHello;
