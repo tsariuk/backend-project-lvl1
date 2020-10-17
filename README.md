@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/7f8a6cdd0c63e79ff2c8/maintainability)](https://codeclimate.com/github/lifechurch/youversion-web-open-ideas/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/14fb832f42902b87889f/maintainability)](https://codeclimate.com/github/tsariuk/backend-project-lvl1/maintainability)
 
 even-game: https://asciinema.org/a/HHQGWVFAUD5ph0QAcTTonOo97
 
