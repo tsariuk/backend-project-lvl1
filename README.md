@@ -3,3 +3,5 @@
 even-game: https://asciinema.org/a/HHQGWVFAUD5ph0QAcTTonOo97
 
 calc-game:  https://asciinema.org/a/GfmZiYFXONYtzpNvh5sucblXp 
+
+gcd-game: https://asciinema.org/a/4aXvUISOiBg93sVlL2Rg3NJ7b
