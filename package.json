@@ -22,7 +22,8 @@
     "brain-even": "bin/brain-even.js",
     "brain-games": "bin/brain-games.js",
     "brain-gcd": "bin/brain-gcd.js",
-    "brain-progression": "bin/brain-progression.js"
+    "brain-progression": "bin/brain-progression.js",
+    "brain-simple": "bin/brain-simple.js"
   },
   "dependencies": {
     "promptly": "^3.1.0",
