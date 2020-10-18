@@ -18,13 +18,8 @@ const getAnswerAndCheck = async (rightAnswer) => {
   return true;
 };
 
-const startGame = async (slugOfGame) => {
-  const name = await promptly.prompt('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-
-  let isGameWon;
+const switchGame = (slugOfGame) => {
   let selectedGame;
-
   switch (slugOfGame) {
     case 'isEven':
       selectedGame = isEven;
@@ -41,8 +36,17 @@ const startGame = async (slugOfGame) => {
     case 'isSimple':
       selectedGame = isSimple;
       break;
-    default: return;
+    default: return undefined;
   }
+  return selectedGame;
+};
+
+const startGame = async (slugOfGame) => {
+  const name = await promptly.prompt('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+
+  let isGameWon;
+  const selectedGame = switchGame(slugOfGame);
 
   let numberOfGame = 0;
 
