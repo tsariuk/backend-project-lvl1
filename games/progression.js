@@ -1,11 +1,9 @@
-import promptly from 'promptly';
-
-const countOfLevels = 3;
 const maxSizeOfFirstElement = 20;
 const maxSizeOfStep = 20;
 const sizeOfProgression = 10;
+export const rules = 'What number is missing in the progression?';
 
-const creatAndShowProgressionWithGap = () => {
+export const createTaskAndRightAnswer = async () => {
   const progression = [];
   const firstElement = Math.floor(Math.random() * maxSizeOfFirstElement);
   const stepProgression = Math.floor(Math.random() * maxSizeOfStep);
@@ -15,32 +13,13 @@ const creatAndShowProgressionWithGap = () => {
     if (i === numberOfBlankElement) {
       progression.push('..');
     } else {
-      progression.push(String(firstElement + i * stepProgression));
+      progression.push(firstElement + i * stepProgression);
     }
   }
-  console.log(progression.join(' '));
+  const stringProgression = progression.join(' ');
+  console.log(`Question: ${stringProgression}`);
+
   return numberOfBlankElement * stepProgression + firstElement;
 };
 
-const getAnswerAndCheck = async () => {
-  console.log('Find the greatest common divisor of given numbers.\nQuestion:');
-  const rightAnswer = creatAndShowProgressionWithGap();
-  const userAnswer = await promptly.prompt('\nYour answer: ');
-
-  if (userAnswer !== String(rightAnswer)) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-    return false;
-  }
-  console.log('Correct!');
-  return true;
-};
-
-const progressionGame = async () => {
-  for (let numberOfGame = 0; numberOfGame < countOfLevels; numberOfGame += 1) {
-    const isGameWon = await getAnswerAndCheck();
-    if (!isGameWon) return false;
-  }
-  return true;
-};
-
-export default progressionGame;
+export default createTaskAndRightAnswer;

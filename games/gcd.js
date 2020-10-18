@@ -1,7 +1,5 @@
-import promptly from 'promptly';
-
-const countOfLevels = 3;
 const maxSizeOfNumber = 100;
+export const rules = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (num1, num2) => {
   let gcdResoult = 1;
@@ -13,26 +11,14 @@ const gcd = (num1, num2) => {
   return gcdResoult;
 };
 
-const getAnswerAndCheck = async (firstNumber, secondNumber) => {
-  const rightAnswer = gcd(firstNumber, secondNumber);
-  const userAnswer = await promptly.prompt(`Find the greatest common divisor of given numbers.\nQuestion: ${firstNumber} ${secondNumber}\nYour answer: `);
+export const createTaskAndRightAnswer = async () => {
+  const firstNum = Math.floor(Math.random() * maxSizeOfNumber);
+  const secondNum = Math.floor(Math.random() * maxSizeOfNumber);
+  const rightAnswer = gcd(firstNum, secondNum);
 
-  if (userAnswer !== String(rightAnswer)) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-    return false;
-  }
-  console.log('Correct!');
-  return true;
+  console.log(`Question: ${firstNum} ${secondNum}`);
+
+  return rightAnswer;
 };
 
-const gcdGame = async () => {
-  for (let numberOfGame = 0; numberOfGame < countOfLevels; numberOfGame += 1) {
-    const firstNum = Math.floor(Math.random() * maxSizeOfNumber);
-    const secondNum = Math.floor(Math.random() * maxSizeOfNumber);
-    const isGameWon = await getAnswerAndCheck(firstNum, secondNum);
-    if (!isGameWon) return false;
-  }
-  return true;
-};
-
-export default gcdGame;
+export default createTaskAndRightAnswer;
