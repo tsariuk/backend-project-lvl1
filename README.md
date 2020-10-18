@@ -1,6 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/14fb832f42902b87889f/maintainability)](https://codeclimate.com/github/tsariuk/backend-project-lvl1/maintainability)
 
-![example workflow name](https://github.com/tsariuk/backend-project-lvl1/workflows/main.yml/badge.svg)
+![example workflow name](https://github.com/tsariuk/backend-project-lvl1/workflows/CI/badge.svg)
 
 even-game: https://asciinema.org/a/HHQGWVFAUD5ph0QAcTTonOo97
 
