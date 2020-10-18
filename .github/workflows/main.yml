@@ -49,4 +49,4 @@ jobs:
       - name: testLint
         run: |
           npm install
-          npx eslint .
+          make lint
